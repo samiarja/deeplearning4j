@@ -618,6 +618,7 @@
                 </plugins>
             </build>
         </profile>
+        <!-- FIXME: workaround to enable libnd4j tests -->
         <profile>
             <id>test</id>
 
