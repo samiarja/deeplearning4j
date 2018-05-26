@@ -618,6 +618,41 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>test</id>
+
+            <activation>
+                <property>libnd4j.test</property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+
+                        <executions>
+                            <execution>
+                                <id>libnd4j.test.run</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>${libnd4j.test.skip}</skip>
+                                    <executable>bash</executable>
+                                    <workingDirectory>${basedir}/tests_cpu</workingDirectory>
+                                    <arguments>
+                                        <argument>run_tests.sh</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
 </project>
