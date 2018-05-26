@@ -622,7 +622,9 @@
             <id>test</id>
 
             <activation>
-                <property>libnd4j.test</property>
+                <property>
+                    <name>libnd4j.test</name>
+                </property>
             </activation>
 
             <build>
